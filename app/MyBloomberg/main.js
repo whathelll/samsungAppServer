@@ -1,18 +1,35 @@
+var Main = {};
 
-/*
-var MyBloomberg = (function($){
-	// Call API for Volume OSD
-	this.onShowEvent = function() {
-		var nnaviPlugin = document.getElementById('pluginObjectNNavi');
-		nnaviPlugin.SetBannerState(2);
+var widgetAPI = new Common.API.Widget();        // Creates Common module
+var tvKey = new Common.API.TVKeyValue();
 
-		// For volume OSD
-		pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
-		pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
-		pluginAPI.unregistKey(tvKey.KEY_MUTE);
-	};
+Main.onShowHandler = function() {
 	
-	this.keyDown = function(event) {            // Key handler
+	//$('#message').html('on show handler called');
+	
+	var pluginAPI = new Common.API.Plugin();
+	var nnaviPlugin = document.getElementById('pluginObjectNNavi');
+	nnaviPlugin.SetBannerState(2);
+	
+	// For volume OSD
+	pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
+	pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
+	pluginAPI.unregistKey(tvKey.KEY_MUTE);
+	
+}
+
+Main.onLoad = function () {
+	
+	window.onShow = onShowHandler;
+	
+	//document.getElementById("anchor").focus();
+	widgetAPI.sendReadyEvent();	
+	$('#message').html('sending ready event');
+	
+}
+
+Main.keyDown = function(event) {
+/*
 		var keyCode = event.keyCode;
 		alert("Main Key code : " + keyCode);
 		switch (keyCode) {
@@ -34,41 +51,5 @@ var MyBloomberg = (function($){
 			case tvKey.KEY_RETURN:
 				break;
 		}
-	};
-	
-}(jquery));
 */
-
-
-var onShowHandler = function() {
-	
-	$('#message').html('on show handler called');
-	
-	var pluginAPI = new Common.API.Plugin();
-	var nnaviPlugin = document.getElementById('pluginObjectNNavi');
-	nnaviPlugin.SetBannerState(2);
-
-	
-	// For volume OSD
-	pluginAPI.unregistKey(tvKey.KEY_VOL_UP);
-	pluginAPI.unregistKey(tvKey.KEY_VOL_DOWN);
-	pluginAPI.unregistKey(tvKey.KEY_MUTE);
-	
 }
-
-
-
-
-$(window).load(function () {
-	
-	window.onShow = onShowHandler;
-	
-	document.getElementById("anchor").focus();
-	var widgetAPI = new Common.API.Widget();
-	widgetAPI.sendReadyEvent();
-	//document.getElementById("anchor").focus();
-	//$('#anchor').bind('keyDown', MyBloomberg.keyDown);
-	
-	$('#message').html('sending ready event');
-	
-});

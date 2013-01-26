@@ -10,13 +10,17 @@
 
 	<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
 	<script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/Plugin.js'></script>
-	<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>	
+	<script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/TVKeyValue.js'></script>
+		
 	<script type="text/javascript" language="javascript" src="Main.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
-<body>
+<body onload="Main.onLoad();">
 	<a href='javascript:void(0);' id='anchor' onkeydown='Main.keyDown();'></a>
 	<div class="embedVideo">
-	This is something to look forward to
+		<script src="http://player.ooyala.com/player.js?width=960&amp;height=512&amp;embedCode=t5dzJsMjqmlohyS6nOe4fkJsSU5dEoDE&amp;autoplay=1"></script>
+		<noscript>&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="ooyalaPlayer_8jqed_gpk1we3o" width="960" height="512" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab"&gt;&lt;param name="movie" value="http://player.ooyala.com/player.swf?embedCode=t5dzJsMjqmlohyS6nOe4fkJsSU5dEoDE&amp;amp;version=2" /&gt;&lt;param name="bgcolor" value="#000000" /&gt;&lt;param name="allowScriptAccess" value="always" /&gt;&lt;param name="allowFullScreen" value="true" /&gt;&lt;param name="flashvars" value="embedType=noscriptObjectTag&amp;amp;embedCode=t5dzJsMjqmlohyS6nOe4fkJsSU5dEoDE&amp;amp;autoplay=1" /&gt;&lt;embed src="http://player.ooyala.com/player.swf?embedCode=t5dzJsMjqmlohyS6nOe4fkJsSU5dEoDE&amp;amp;version=2" bgcolor="#000000" width="960" height="512" name="ooyalaPlayer_8jqed_gpk1we3o" align="middle" play="true" loop="false" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" flashvars="&amp;amp;embedCode=t5dzJsMjqmlohyS6nOe4fkJsSU5dEoDE&amp;amp;autoplay=1" pluginspage="http://www.adobe.com/go/getflashplayer"&gt;&lt;/embed&gt;&lt;/object&gt;</noscript>
+
 	</div>
 	<div id="message">message</div>
 </body>
