@@ -20,11 +20,11 @@ Main.onShowHandler = function() {
 
 Main.onLoad = function () {
 	
-	window.onShow = onShowHandler;
+	window.onShow = Main.onShowHandler;
 	
 	//document.getElementById("anchor").focus();
 	widgetAPI.sendReadyEvent();	
-	$('#message').html('sending ready event');
+	//$('#message').html('sending ready event');
 	
 }
 
